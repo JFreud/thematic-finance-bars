@@ -7,17 +7,12 @@ var finance_2009 = [43.5, 6.6, 42.3, 3, 4.7]
 var chart = d3.select(".chart");
 var bar = chart.selectAll("div");
 var barUpdate = bar.data(finance_1948);
-if (toggle) {
-  barUpdate = bar.data(finance_2009);
-}
 var barEnter = barUpdate.enter().append("div");
-
-
-//5s transition:
 barEnter.transition().duration(2000).style("width", function(d) {
   return d * 10 + "px"; });
-
 barEnter.text(function(d) { return d; });
+bar.data(revenues).append("p").attr("style", "float:none").text(function(d){
+  return d; });
 
 var toggler = function() {
   if (toggle) {
@@ -28,6 +23,8 @@ var toggler = function() {
     barEnter.transition().duration(2000).style("width", function(d) {
       return d * 10 + "px"; });
     barEnter.text(function(d) { return d; });
+    bar.data(revenues).append("p").attr("style", "float:none").text(function(d){
+      return d; });
   }
   else {
     toggle = 1;
@@ -37,6 +34,8 @@ var toggler = function() {
     barEnter.transition().duration(2000).style("width", function(d) {
       return d * 10 + "px"; });
     barEnter.text(function(d) { return d; });
+    bar.data(revenues).append("p").attr("style", "float:none").text(function(d){
+      return d; });
   }
 }
 
