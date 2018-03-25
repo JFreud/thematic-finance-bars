@@ -17,7 +17,7 @@ bar.data(revenues).append("p").attr("style", "float:none").text(function(d){
 var toggler = function() {
   if (toggle) {
     toggle = 0;
-    header.innerHTML = "Federal Revenue Breakdown for 1948"
+    header.innerHTML = "Federal Revenue Breakdown Percentages for 1948"
     bar = chart.selectAll("div");
     barUpdate = bar.data(finance_1948);
     barEnter.transition().duration(2000).style("width", function(d) {
@@ -28,7 +28,7 @@ var toggler = function() {
   }
   else {
     toggle = 1;
-    header.innerHTML = "Federal Revenue Breakdown for 2009"
+    header.innerHTML = "Federal Revenue Breakdown Percentages for 2009"
     bar = chart.selectAll("div");
     barUpdate = bar.data(finance_2009);
     barEnter.transition().duration(2000).style("width", function(d) {
